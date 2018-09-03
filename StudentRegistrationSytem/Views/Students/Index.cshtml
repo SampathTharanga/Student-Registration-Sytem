@@ -1,0 +1,92 @@
+﻿
+@{
+    ViewBag.Title = "Register";
+}
+
+<form class="needs-validation" novalidate>
+    <div class="form-row">
+        <div class="col-md-4 mb-3">
+            <label for="validationCustom01">First name</label>
+            <input type="text" class="form-control" id="validationCustom01" placeholder="Sampath" value="" required>
+        </div>
+        <div class="col-md-4 mb-3">
+            <label for="validationCustom02">Last name</label>
+            <input type="text" class="form-control" id="validationCustom02" placeholder="Samaradiwakara" value="" required>
+        </div>
+        <div class="col-md-4 mb-3">
+            <div class="form-group">
+                <label for="validationCustom03">Gender</label>
+                <select class="form-control" id="validationCustom03" required>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="col-md-4 mb-3">
+            <label for="validationCustom04">School</label>
+            <input type="text" class="form-control" id="validationCustom04" placeholder="Kegallu Vidyalaya" required>
+        </div>
+        <div class="col-md-4 mb-3">
+            <div class="form-group">
+                <label for="validationCustom05">Grade</label>
+                <select class="form-control" id="validationCustom05" required>
+                    <option>Grade 01</option>
+                    <option>Grade 02</option>
+                    <option>Grade 03</option>
+                    <option>Grade 04</option>
+                    <option>Grade 05</option>
+                    <option>Grade 06</option>
+                    <option>Grade 07</option>
+                    <option>Grade 08</option>
+                    <option>Grade 09</option>
+                    <option>Grade 10</option>
+                    <option>Grade 11</option>
+                    <option>Grade 12</option>
+                    <option>Grade 13</option>
+                </select>
+            </div>
+        </div>
+        <div class="col-md-4 mb-3">
+            <label for="validationCustom06">Birthday</label>
+            <input type="date" class="form-control" id="validationCustom06" placeholder="Birthday" required>
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="col-md-4 mb-3">
+            <label for="validationCustom07">Address</label>
+            <input type="text" class="form-control" id="validationCustom07" placeholder="No 37, Mabula, Waga" required>
+        </div>
+        <div class="col-md-4 mb-3">
+            <label for="validationCustom08">City</label>
+            <input type="text" class="form-control" id="validationCustom08" placeholder="Hanwella" required>
+        </div>
+        <div class="col-md-4 mb-3">
+            <label for="validationCustom09">Email</label>
+            <input type="email" class="form-control" id="validationCustom09" placeholder="info@example.com" required>
+        </div>
+    </div>
+    <button class="btn btn-primary" type="submit">Submit</button>
+</form>
+
+<script>
+// Example starter JavaScript for disabling form submissions if there are invalid fields
+(function() {
+  'use strict';
+  window.addEventListener('load', function() {
+    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+    let forms = document.getElementsByClassName('needs-validation');
+    // Loop over them and prevent submission
+    let validation = Array.prototype.filter.call(forms, function(form) {
+      form.addEventListener('submit', function(event) {
+        if (form.checkValidity() === false) {
+          event.preventDefault();
+          event.stopPropagation();
+        }
+        form.classList.add('was-validated');
+      }, false);
+    });
+  }, false);
+})();
+</script>

@@ -1,0 +1,73 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Sampath Tharanga</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    @Styles.Render("~/Content/dataTables.bootstrap4.min.css")
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+</head>
+<body>
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+        <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            @Html.ActionLink("Students Mgt. System", "Index", "Students", new { @class = "navbar-brand" })
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item"><a class="nav-link" href="#"><span class="fa fa-user-plus"></span> SIGN UP</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#"><span class="fa fa-user-alt"></span> LOGIN</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container-fluid body-content">
+        <div class="row">
+            <div class="col-md-2 bg-light">
+                <!-- A vertical navbar -->
+                <nav class="navbar bg-light sidebar">
+
+                    <!-- Links -->
+                    <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+                        <span class="">STUDENTS</span>
+                        <a class="d-flex align-items-center text-muted" href="#">
+                            <span class="fa fa-plus-circle"></span>
+                        </a>
+                    </h6>
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="@Url.Action("Index", "Students")"><span class="fa fa-user-plus p-2"></span>Register</a>
+                        </li>
+                        <li class="nav-item">
+                            @** @Html.ActionLink("Students", "Index", "Students", new { @class = "nav-link" }) **@
+                            <a href="@Url.Action("Student", "Students")" class="nav-link"><span class="fa fa-user-friends p-2"></span>Students List</a>
+                        </li>
+                    </ul>
+
+                </nav>
+            </div>
+            <div class="col-md-10">
+                <div class="row m-3"></div><!-- FOR TOP MARGIN -->
+                @RenderBody()
+                <div id="sample-text"></div>
+            </div>
+        </div>
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year -Developed by Sampath Tharanga</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+    <script src="~/Scripts/custome_typescript.js"></script>
+
+    <!-- JQuery Data Table -->
+    @Scripts.Render("~/Scripts/jquery.dataTables.min.js")
+    @Scripts.Render("~/Scripts/dataTables.bootstrap4.min.js")
+</body>
+</html>
